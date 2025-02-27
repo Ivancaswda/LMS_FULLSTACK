@@ -34,7 +34,7 @@ const clerkWebhooks = async (request, response) => {
 
                 const userData = {
                     email: data.email_address[0].email_address,
-                    name: data.name + ' ' + data.lastName,
+                    name: data.first_name + ' ' + data.last_name,
                     image: data.image_url
                 }
                 await userModel.findByIdAndUpdate(data.id, userData)
